@@ -23,16 +23,7 @@ test("clicking the category button adds a class of 'selected' to the button", ()
   expect(allButton.classList).not.toContain("selected");
 });
 
-test("clicking the category button filters the task list", () => {
-  render(<App />);
 
-  const codeButton = screen.queryByRole("button", { name: "Code" });
-
-  fireEvent.click(codeButton);
-
-  expect(screen.queryByText("Build a todo app")).toBeInTheDocument();
-  expect(screen.queryByText("Buy rice")).not.toBeInTheDocument();
-});
 
 test("displays all tasks when the 'All' button is clicked", () => {
   render(<App />);
